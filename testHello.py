@@ -1,8 +1,7 @@
 import unittest
+from hello import sayHello
 
-from hello.py import sayHello
-
-class TestFileName(unittest.testCase):
+class TestFileName(unittest.TestCase):
   def test_sayHello(self):
     greeting = sayHello()
     self.assertEqual(greeting, "Hello World")
