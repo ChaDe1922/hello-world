@@ -42,7 +42,6 @@ pyasn1==0.4.2
 pycodestyle==2.5.0
 pycrypto==2.6.1
 Pygments==2.2.0
-pygobject==3.26.1
 pyOpenSSL==17.5.0
 pyparsing==2.4.7
 pytest==4.6.11
