@@ -41,11 +41,6 @@ py==1.10.0
 pyasn1==0.4.2
 pycodestyle==2.5.0
 pycrypto==2.6.1
-pygame==2.0.1
-Pygments==2.2.0
-pygobject==3.40.1
-pyOpenSSL==17.5.0
-pyparsing==2.4.7
 pytest==4.6.11
 requests==2.18.4
 
