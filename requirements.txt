@@ -43,7 +43,7 @@ pycodestyle==2.5.0
 pycrypto==2.6.1
 pygame==2.0.1
 Pygments==2.2.0
-pygobject==3.26.1
+pygobject==3.40.1
 pyOpenSSL==17.5.0
 pyparsing==2.4.7
 pytest==4.6.11
