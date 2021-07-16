@@ -35,8 +35,7 @@ jobs:
     - name: Test with pytest
       run: |
         export PYTHONPATH=src
-        pytest
-        
+        pytest 
      - name: Check out repository
        uses: actions/checkout@v2
      - name: Deploy to Heroku
