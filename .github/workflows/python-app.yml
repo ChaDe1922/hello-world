@@ -34,28 +34,14 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
+        pip install pytest
         export PYTHONPATH=src
         pytest 
-    - name: Check out repository
-      uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
-    - name: Heroku login credentials
-      run: |
-        cat > ~/.netrc <<EOF
-          machine api.heroku.com
-            login $HEROKU_EMAIL
-            password $HEROKU_API_KEY
-          machine git.heroku.com
-            login $HEROKU_EMAIL
-            password $HEROKU_API_KEY
-        EOF
+    - name: Deploy to Heroku
       env:
-        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-        HEROKU_EMAIL: ${{ secrets.HEROKU_EMAIL }}
-    - name: Add Heroku remote
-      run: heroku git:remote --app $HEROKU_APP_NAME
-      env:
+        HEROKU_API_TOKEN: ${{ secrets.HEROKU_API_TOKEN }}
         HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
-    - name: Push to Heroku
-      run: git push heroku master
+      if: github.ref == 'refs/heads/master' && job.status == 'success'
+      run: |
+        git remote add heroku https://heroku:$HEROKU_API_TOKEN@git.heroku.com/$HEROKU_APP_NAME.git
+        git push heroku HEAD:master -f
