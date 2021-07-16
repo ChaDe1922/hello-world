@@ -1,0 +1,17 @@
+{
+ "name": "CD_Playhaus_py",
+ "children": [
+  {
+   "title": "Page 1",
+   "id": "61fd4434-ae07-3ff6-dff6-6e77e3547100",
+   "pageId": "61fd4434-ae07-3ff6-dff6-6e77e3547100",
+   "type": "page"
+  },
+  {
+   "title": "Page 2",
+   "id": "65317d4c-2ff9-eb11-9aea-462ae602bf1d",
+   "pageId": "65317d4c-2ff9-eb11-9aea-462ae602bf1d",
+   "type": "page"
+  }
+ ]
+}
